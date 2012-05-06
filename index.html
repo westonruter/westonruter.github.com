@@ -4,57 +4,12 @@
         <meta charset="utf-8">
         <title>Weston Ruter on GitHub</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Author page for Weston Ruter on GitHub">
+        <meta name="description" content="User page for Weston Ruter on GitHub">
         <meta name="author" content="Weston Ruter">
 
-        <!-- Le styles -->
-        <link href="/bootstrap/css/bootstrap.css" rel="stylesheet">
-        <style type="text/css">
-            body {
-                padding-top: 60px;
-                padding-bottom: 40px;
-            }
-            .hero-unit {
-                text-align: center;
-            }
-            h1 {
-                text-align: center;
-                padding-bottom: 0.5em;
-            }
-            .mask {
-                position: relative;
-                border-radius: 138px;
-                background: #25aae1;
-                width: 276px;
-                height: 276px;
-                display: inline-block;
-            }
-            .mask .avatar {
-                position: absolute;
-                left: 10px;
-                top: 10px;
-                width: 256px;
-                height: 256px;
-            }
-            @media (max-width: 480px) {
-                .hero-unit h1 {
-                    font-size: 40px;
-                }
-                .mask {
-                    width: 138px;
-                    height: 138px;
-                    border-radius: 70px;
-                }
-                .mask .avatar {
-                    position: absolute;
-                    left: 5px;
-                    top: 5px;
-                    width: 128px;
-                    height: 128px;
-                }
-            }
-        </style>
-        <link href="/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+        <link href='http://fonts.googleapis.com/css?family=Bangers' rel='stylesheet' type='text/css'>
+        <link href="/css/normalize.css" rel="stylesheet">
+        <link href="/css/main.css" rel="stylesheet">
 
         <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 
@@ -64,52 +19,53 @@
         <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/apple-touch-icon-72-precomposed.png">
         <link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-57-precomposed.png">
     </head>
-    <body>
+    <body class="vcard" itemscope itemtype="http://data-vocabulary.org/Person">
+        <header>
+            <h1>
+                <span class="weston-ruter fn" itemprop="name">Weston Ruter</span>
+                <span class="thunderboy"><span class="paren">(</span><span class="nickname" itemprop="nickname">Thunderboy</span><span class="paren">)</span></span>
+            </h1>
+            <h2>
+                on GitHub
+            </h2>
+        </header>
+        <p>
+            <img itemprop="image" class="photo avatar thunderboy" src="/images/weston-ruter-profile-masked.png" alt="Thunderboy">
+            <img itemprop="image" class="photo avatar weston" src="/images/thunderboy-profile-masked.png" alt="Weston Ruter">
+        </p>
+        <p>
+            <a href="https://github.com/westonruter" class="button bigrounded blue">Browse repositories</a>
+        </p>
 
-        <div class="container">
+        <blockquote itemprop="description" class="description" cite="http://heroized.com/case-study/x-team#superhero-thunderboy">
+        Thunderboy is a highly intelligent and technologically-inclined
+        elemental of Nordic decent. Thunderboy can control weather and
+        transcommunicate (via electronic voice) through his thundercloud static
+        field. With his static field, he also is able to create lightning bolts
+        and move within them, allowing him to travel at impressive speed. He
+        uses the elements and the forces of nature to help those in need,
+        impressing regular citizens with his dazzling light effects, and also
+        take down the baddest of bad guys. Thunderboy thrills the innocent and
+        puts a real shock into the sinister!
+        </blockquote>
 
-            <div class="hero-unit">
-                
-                <div class="row-fluid">
-                    <div class="span12">
-                        <h1>Weston Ruter</h1>
-                        
-                        <div class="row-fluid">
-                            <span class="span6">
-                                <span class="mask"><img class="avatar thunderboy" src="/images/weston-ruter-profile-masked.png" alt="Thunderboy"></span>
-                            </span>
-                            <span class="span6">
-                                <span class="mask"><img class="avatar weston" src="/images/thunderboy-profile-masked.png" alt="Weston Ruter"></span>
-                            </span>
-                        </div>
-                        <div class="span12">
-                            <p><a class="btn btn-primary btn-large" href="https://github.com/westonruter">See repos &raquo;</a></p>
-                        </div>
-                        
-                    </div>
-                </div>
-            </div>
-            
-            <div class="row">
-                <div class="span4 offset4">
-                    <ul>
-                        <li><a href="http://weston.ruter.net/" rel="me">Website</a></li>
-                        <li><a href="https://twitter.com/westonruter" rel="me">Twitter</a></li>
-                        <li><a href="https://www.facebook.com/westonruter" rel="me">Facebook</a></li>
-                        <!-- @todo rel=me links -->
-                    </ul>
-                </div>
-            </div>
+        <p>
+            <!--<code>rel=me</code>-->
+            {
+            <a itemprop="url" class="url" href="http://weston.ruter.net/" rel="me">Domain</a>,
+            <a itemprop="url" class="url" href="https://twitter.com/westonruter" rel="me">Twitter</a>,
+            <a itemprop="url" class="url" href="https://www.facebook.com/westonruter" rel="me">Facebook</a>,
+            <a itemprop="url" class="url" href="https://plus.google.com/113853198722136596993" rel="me">Google+</a>
+            }
+        </p>
 
-            <!-- @todo X-Team logo -->
+        <p class="employment">
+            <span class="title" itemprop="jobTitle">Sr. Web Developer</span> at
+            <a href="http://x-team.com/" class="org" itemprop="affiliation" >X-Team</a>
+        </p>
 
-            <hr>
-
-            <footer>
-                <p>&copy; Weston Ruter 2012</p>
-            </footer>
-
-        </div> <!-- /container -->
-
+        <footer>
+            <p class="copyright">&copy; 2012, Weston Ruter, X-Team</p>
+        </footer>
     </body>
 </html>
