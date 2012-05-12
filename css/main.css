@@ -185,8 +185,19 @@ h2 {
     color: #999;
 }
 .heroized figcaption a {
-    margin-left: 0.3ex;
-    color: #999;
+    margin-left: 0.5ex;
+    color: #ddd;
+    vertical-align: middle;
+    display: inline-block;
+
+    background-image: url("/images/heroized-logo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 16px;
+    width: 65px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-indent: 100%;
 }
 .heroized figcaption a:hover {
     color: #064E68;
@@ -216,6 +227,7 @@ h2 {
     font-size: smaller;
 }
 .contact a {
+    color: #666;
     text-decoration: none;
 }
 .contact a:hover {
