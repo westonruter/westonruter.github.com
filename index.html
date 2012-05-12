@@ -2,13 +2,12 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Weston Ruter on GitHub</title>
+        <title>Weston Ruter (Thunderboy) on GitHub</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-        <meta name="description" content="User page for Weston Ruter on GitHub">
         <meta name="author" content="Weston Ruter">
         <meta name="google-site-verification" content="Fj1NaON9Q87PTcQWcHohnR1puXeqp6uCdDoc93ieG34">
 
-        <link href='http://fonts.googleapis.com/css?family=Bangers' rel='stylesheet' type='text/css'>
+        <link href="http://fonts.googleapis.com/css?family=Bangers" rel="stylesheet" type="text/css">
         <link href="/css/normalize.css" rel="stylesheet">
         <link href="/css/main.css" rel="stylesheet">
 
@@ -19,6 +18,7 @@
         <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/apple-touch-icon-114-precomposed.png">
         <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/apple-touch-icon-72-precomposed.png">
         <link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-57-precomposed.png">
+        <meta propety="og:image" content="/images/apple-touch-icon-144-precomposed.png">
 
         <script>
         var _gaq = _gaq || [];
@@ -37,29 +37,33 @@
                 <span class="weston-ruter fn" itemprop="name">Weston Ruter</span>
                 <span class="thunderboy"><span class="paren">(</span><span class="nickname" itemprop="nickname">Thunderboy</span><span class="paren">)</span></span>
             </h1>
-            <h2>
-                on GitHub
-            </h2>
+            <h2>on GitHub</h2>
         </header>
         <p>
-            <span class="avatar"><img itemprop="image" class="photo thunderboy" src="/images/weston-ruter-profile-masked.png" alt="Thunderboy"></span>
-            <span class="avatar"><img itemprop="image" class="photo weston" src="/images/thunderboy-profile-masked.png" alt="Weston Ruter"></span>
+            <span class="avatar"><img itemprop="image" class="photo thunderboy" src="/images/weston-ruter-profile.jpg" data-srcmasked="/images/weston-ruter-profile-masked.png" alt="Thunderboy"></span>
+            <span class="avatar"><img itemprop="image" class="photo weston" src="/images/thunderboy-profile.jpg" data-srcmasked="/images/thunderboy-profile-masked.png" alt="Weston Ruter"></span>
         </p>
         <p>
             <a href="https://github.com/westonruter" class="button bigrounded blue">Browse repositories</a>
         </p>
 
-        <blockquote itemprop="description" class="description" cite="http://heroized.com/case-study/x-team#superhero-thunderboy">
-        Thunderboy is a highly intelligent and technologically-inclined
-        elemental of Nordic decent. Thunderboy can control weather and
-        transcommunicate (via electronic voice) through his thundercloud static
-        field. With his static field, he also is able to create lightning bolts
-        and move within them, allowing him to travel at impressive speed. He
-        uses the elements and the forces of nature to help those in need,
-        impressing regular citizens with his dazzling light effects, and also
-        take down the baddest of bad guys. Thunderboy thrills the innocent and
-        puts a real shock into the sinister!
-        </blockquote>
+        <figure class="heroized"><!-- cf. http://html5doctor.com/blockquote-q-cite/#change-2012-02-14 -->
+            <blockquote
+                itemprop="description"
+                cite="http://heroized.com/case-study/x-team#superhero-thunderboy"
+                class="description">Thunderboy is a highly intelligent and technologically-inclined
+            elemental of Nordic decent. Thunderboy can control weather and
+            transcommunicate (via electronic voice) through his thundercloud static
+            field. With his static field, he also is able to create lightning bolts
+            and move within them, allowing him to travel at impressive speed. He
+            uses the elements and the forces of nature to help those in need,
+            impressing regular citizens with his dazzling light effects, and also
+            take down the baddest of bad guys. Thunderboy thrills the innocent and
+            puts a real shock into the sinister!</blockquote>
+            <figcaption>
+                &mdash;<a href="http://heroized.com/case-study/x-team#superhero-thunderboy" title="Find your superhero identity with HEROized, a service of X-Team">HEROized</a>
+            </figcaption>
+        </figure>
 
         <p>
             <!--<code>rel=me</code>-->
@@ -77,5 +81,29 @@
         <footer>
             <p class="copyright">&copy; 2012, Weston Ruter, X-Team</p>
         </footer>
+
+        <script>
+        // Throw in fallback for agents that don't support image masks
+        (function(){
+            var svg_img = new Image();
+            svg_img.onload = svg_img.onerror = function () {
+                var supports_inline_svg = (this.width === 1);
+                var el = document.createElement('span');
+                var has_masks = (
+                    (typeof (el.style.WebkitMaskRepeat) !== 'undefined')
+                    ||
+                    (supports_inline_svg && typeof el.style.mask !== 'undefined') // Mask property fails in Opera, and this is the only way I found that singled it out
+                );
+                if (has_masks === false) {
+                    var masked_images = [].slice.call(document.querySelectorAll('img[data-srcmasked]'));
+                    var i;
+                    for (i = 0; i < masked_images.length; i += 1) {
+                        masked_images[i].src = masked_images[i].getAttribute('data-srcmasked');
+                    }
+                }
+            };
+            svg_img.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1" height="1"></svg>';
+        }());
+        </script>
     </body>
 </html>

@@ -11,6 +11,7 @@ a:focus {
 body {
     padding-top: 60px;
     padding-bottom: 40px;
+    -webkit-border-radius: 80px;
     border-radius: 80px;
     width: 600px;
     padding: 20px;
@@ -50,34 +51,31 @@ h2 {
     margin-top: 0.5em;
     font-size: 1.5em;
 }
+
 .avatar {
-    width: 250px;
-    height: 250px;
-    margin-right: 1em;
-    margin-left: 1em;
-    position: relative;
-    z-index: 1;
+    box-shadow: 2px 2px 5px #222;
+    padding: 10px;
+    -webkit-border-radius: 138px; /* 128px + 10px*/
+    border-radius: 138px; /* 128px + 10px*/
+    background: #25aae1;
     display: inline-block;
 }
-.avatar:before {
-    position: absolute;
-    z-index: -1;
-    top: -5px;
-    left: -5px;
-    right: -5px;
-    bottom: -5px;
-    border-radius: 128px;
-    background: #25aae1;
-    content: "";
-    box-shadow: 2px 2px 5px #222;
+.avatar:first-child {
+    margin-right: 24px;
 }
-.photo {
-    width:100%;
+.avatar img {
+    width: 256px;
+    height: 256px;
+    display: block;
+
+    mask: url(/images/circle-mask.svg#mask); /* Firefox can use SVG mask */
+    -webkit-mask-image: url(/images/circle-mask.svg#circle); /* Chrome and Safari */
+    /* Other browsers get image[src] set to [data-srcmasked] */
 }
 
 
 /**
- * Begin code from http://www.webdesignerwall.com/demo/css-buttons.html
+ * Begin code adapted from http://www.webdesignerwall.com/demo/css-buttons.html
  */
 
 /* button
@@ -92,7 +90,7 @@ h2 {
     cursor: pointer;
     text-align: center;
     text-decoration: none;
-    font: 14px/100% Arial, Helvetica, sans-serif;
+    font: 18px/100% Arial, Helvetica, sans-serif;
     padding: .5em 2em .55em;
     text-shadow: 0 1px 1px rgba(0,0,0,.3);
     -webkit-border-radius: .5em;
@@ -117,7 +115,6 @@ h2 {
 
 .bigrounded {
     -webkit-border-radius: 2em;
-    -moz-border-radius: 2em;
     border-radius: 2em;
 }
 .medium {
@@ -135,18 +132,24 @@ h2 {
     background: #0095cd;
     background: -webkit-gradient(linear, left top, left bottom, from(#25aae1), to(#0078a5));
     background: -moz-linear-gradient(top,  #25aae1,  #0078a5);
+    background: -ms-linear-gradient(top,  #25aae1,  #0078a5);
+    background: -o-linear-gradient(top,  #25aae1,  #0078a5);
     filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#25aae1', endColorstr='#0078a5');
 }
 .blue:hover {
     background: #007ead;
     background: -webkit-gradient(linear, left top, left bottom, from(#0095cc), to(#00678e));
     background: -moz-linear-gradient(top,  #0095cc,  #00678e);
+    background: -ms-linear-gradient(top,  #0095cc,  #00678e);
+    background: -o-linear-gradient(top,  #0095cc,  #00678e);
     filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#0095cc', endColorstr='#00678e');
 }
 .blue:active {
     color: #80bed6;
     background: -webkit-gradient(linear, left top, left bottom, from(#0078a5), to(#00adee));
     background: -moz-linear-gradient(top,  #0078a5,  #00adee);
+    background: -ms-linear-gradient(top,  #0078a5,  #00adee);
+    background: -o-linear-gradient(top,  #0078a5,  #00adee);
     filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#0078a5', endColorstr='#00adee');
 }
 
@@ -154,12 +157,40 @@ h2 {
  * End code from http://www.webdesignerwall.com/demo/css-buttons.html
  */
 
-
-blockquote {
+.heroized {
     line-height: 1.4em;
     color: #222;
     margin-left: 1em;
     margin-right: 1em;
+}
+.heroized blockquote {
+    margin: 0;
+}
+.heroized blockquote:before,
+.heroized blockquote:after {
+    color: #999;
+}
+.heroized blockquote:before {
+    content: "“";
+    padding-right: 0.3ex;
+}
+.heroized blockquote:after {
+    content: "”";
+    padding-left: 0.3ex;
+}
+.heroized figcaption {
+    white-space: nowrap;
+    margin-left: 1ex;
+    font-size: smaller;
+    font-style: italic;
+    color: #999;
+}
+.heroized figcaption a {
+    margin-left: 0.3ex;
+}
+.heroized blockquote,
+.heroized figcaption {
+    display: inline;
 }
 
 .employment {
@@ -185,6 +216,7 @@ footer {
 @media (max-width: 640px) {
     body {
         width: 340px;
+        -webkit-border-radius: 30px;
         border-radius: 30px;
     }
     h1 .weston-ruter {
@@ -196,61 +228,46 @@ footer {
     h2 {
         font-size: 1em;
     }
-    .avatar {
+    .avatar,
+    .avatar img {
         width: 128px;
         height: 128px;
+    }
+    .avatar {
+        padding: 5px;
+        -webkit-border-radius: 133px; /* 128px + 5px*/
+        border-radius: 133px; /* 128px + 5px*/
+    }
+    .avatar:first-child {
+        margin-right: 12px;
     }
 }
 @media (max-width: 320px) {
     body {
         width: auto;
+        -webkit-border-radius: 0px;
         border-radius: 0px;
         margin: 0;
-    }
-    .avatar {
-        width: 100px;
-        height: 100px;
     }
     h1 .weston-ruter {
         font-size: 1.3em;
     }
-    blockquote {
+    .avatar,
+    .avatar img {
+        width: 100px;
+        height: 100px;
+    }
+    .avatar {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .avatar:first-child {
+        margin-right: auto;
+        margin-bottom: 10px;
+    }
+    .heroized {
         margin-left: 0;
         margin-right: 0;
     }
 }
-
-/*
-.mask {
-    position: relative;
-    border-radius: 138px;
-    background: #25aae1;
-    width: 276px;
-    height: 276px;
-    display: inline-block;
-}
-.mask .avatar {
-    position: absolute;
-    left: 10px;
-    top: 10px;
-    width: 256px;
-    height: 256px;
-}
-@media (max-width: 480px) {
-    .hero-unit h1 {
-        font-size: 40px;
-    }
-    .mask {
-        width: 138px;
-        height: 138px;
-        border-radius: 70px;
-    }
-    .mask .avatar {
-        position: absolute;
-        left: 5px;
-        top: 5px;
-        width: 128px;
-        height: 128px;
-    }
-}
-*/
