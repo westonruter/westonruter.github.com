@@ -283,13 +283,11 @@ footer {
         height: 100px;
     }
     .avatar {
-        display: block;
         margin-left: auto;
         margin-right: auto;
     }
     .avatar:first-child {
         margin-right: auto;
-        margin-bottom: 10px;
     }
     .heroized {
         margin-left: 0;
