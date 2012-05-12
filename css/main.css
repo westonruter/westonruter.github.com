@@ -24,7 +24,6 @@ header {
 }
 h1 {
     text-align: center;
-    /*color: #25aae1;*/
     color: #25aae1;
 
     font-family: 'Bangers', sans-serif;
@@ -187,6 +186,10 @@ h2 {
 }
 .heroized figcaption a {
     margin-left: 0.3ex;
+    color: #999;
+}
+.heroized figcaption a:hover {
+    color: #064E68;
 }
 .heroized blockquote,
 .heroized figcaption {
@@ -207,6 +210,16 @@ h2 {
     height: 70px;
     text-indent: -200%;
     overflow: hidden;
+}
+.contact {
+    color: #999;
+    font-size: smaller;
+}
+.contact a {
+    text-decoration: none;
+}
+.contact a:hover {
+    text-decoration: underline;
 }
 footer {
     color: #ddd;
