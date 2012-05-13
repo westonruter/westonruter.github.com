@@ -11,7 +11,7 @@
         <link href="/css/normalize.css" rel="stylesheet">
         <link href="/css/main.css" rel="stylesheet">
 
-        <!--[if lt IE 9]><script src="js/html5shiv.js"></script><![endif]-->
+        <!--[if lt IE 9]><script src="/js/html5shiv.js"></script><![endif]-->
 
         <link rel="shortcut icon" href="/favicon.ico">
         <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/apple-touch-icon-144-precomposed.png">
@@ -36,11 +36,13 @@
     </head>
     <body class="vcard" itemscope itemtype="http://data-vocabulary.org/Person">
         <header>
-            <h1>
-                <span class="weston-ruter fn" itemprop="name">Weston Ruter</span>
-                <span class="thunderboy"><span class="paren">(</span><span class="nickname" itemprop="nickname">Thunderboy</span><span class="paren">)</span></span>
-            </h1>
-            <h2>on GitHub</h2>
+            <hgroup>
+                <h1>
+                    <span class="weston-ruter fn" itemprop="name">Weston Ruter</span>
+                    <span class="thunderboy"><span class="paren">(</span><span class="nickname" itemprop="nickname">Thunderboy</span><span class="paren">)</span></span>
+                </h1>
+                <h2>on GitHub</h2>
+            </hgroup>
         </header>
         <p>
             <span class="avatar"><img itemprop="image" class="photo thunderboy" src="/images/weston-ruter-profile.jpg" data-srcmasked="/images/weston-ruter-profile-masked.png" alt="Thunderboy"></span>
@@ -68,12 +70,12 @@
             </figcaption>
         </figure>
 
-        <p>
-            <!--<code>rel=me</code>-->
-            {<a itemprop="url" class="url" href="http://weston.ruter.net/" rel="me">Website</a>,
-            <a itemprop="url" class="url" href="https://twitter.com/westonruter" rel="me">Twitter</a>,
-            <a itemprop="url" class="url" href="https://www.facebook.com/westonruter" rel="me">Facebook</a>,
-            <a itemprop="url" class="url" href="https://plus.google.com/113853198722136596993" rel="me">Google+</a>}
+        <p class="profiles">
+            <a itemprop="url" class="url home" href="http://weston.ruter.net/" rel="me">Home</a>,
+            <a itemprop="url" class="url twitter" href="https://twitter.com/westonruter" rel="me">Twitter</a>,
+            <a itemprop="url" class="url facebook" href="https://www.facebook.com/westonruter" rel="me">Facebook</a>,
+            <a itemprop="url" class="url linkedin" href="http://www.linkedin.com/in/westonruter" rel="me">LinkedIn</a>,
+            <a itemprop="url" class="url googleplus" href="https://plus.google.com/113853198722136596993" rel="me">Google+</a>
         </p>
 
         <p class="employment">

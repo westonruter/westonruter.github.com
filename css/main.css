@@ -206,7 +206,19 @@ h2 {
 .heroized figcaption {
     display: inline;
 }
-
+.profiles {
+    /* todo: icons */
+    margin-top: 1em;
+}
+.profiles:before {
+    content: "{";
+}
+.profiles:after {
+    content: "}";
+}
+.profiles a {
+    white-space: nowrap;
+}
 .employment {
     color: #666;
     font-style: italic;
@@ -292,5 +304,13 @@ footer {
     .heroized {
         margin-left: 0;
         margin-right: 0;
+    }
+    .profiles:before,
+    .profiles:after {
+        content: "";
+    }
+    .profiles {
+        /* todo: icons */
+        font-size: smaller;
     }
 }
