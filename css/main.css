@@ -231,8 +231,9 @@ h2 {
     margin: 0.5em auto;
     width: 200px;
     height: 70px;
-    text-indent: -200%;
+    white-space: nowrap;
     overflow: hidden;
+    text-indent: 100%;
 }
 .contact {
     color: #999;
